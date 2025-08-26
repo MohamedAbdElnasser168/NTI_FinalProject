@@ -112,8 +112,8 @@ function checkLoginStatus() {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     const currentPage = window.location.pathname.split('/').pop();
 
-    if (isLoggedIn !== 'true' && currentPage !== 'Login.html') {
-        window.location.href = 'Login.html';
+    if (isLoggedIn !== 'true' && currentPage !== 'index.html') {
+        window.location.href = 'index.html';
     }
 }
 
@@ -139,12 +139,12 @@ function handleLogin() {
 
 
 function handleLogout() {
-    const logoutLink = document.querySelector('a[href="Login.html"]');
+    const logoutLink = document.querySelector('a[href="index.html"]');
     if (logoutLink) {
         logoutLink.addEventListener('click', function(event) {
             event.preventDefault(); 
             localStorage.setItem('isLoggedIn', 'false');
-            window.location.href = 'Login.html';
+            window.location.href = 'index.html';
         });
     }
 }
